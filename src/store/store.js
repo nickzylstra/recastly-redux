@@ -19,9 +19,6 @@ const configureStore = function configureStore(initialState) {
   );
 };
 
-const store = configureStore({
-  videoList: exampleVideoData,
-  currentVideo: exampleVideoData[0]
-});
+const store = configureStore();
 
 export default store;

@@ -17,4 +17,7 @@ var handleVideoSearch = (q) => {
   };
 };
 
+const debouncedHandleVideoSearch = _.debounce(handleVideoSearch, 1000);
+// debugger;
 export default handleVideoSearch;
+// export default debouncedHandleVideoSearch;
