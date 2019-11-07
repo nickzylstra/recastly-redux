@@ -2,8 +2,8 @@ import React from 'react';
 import VideoListContainer from '../containers/VideoListContainer.js';
 import VideoPlayerContainer from '../containers/VideoPlayerContainer.js';
 import SearchContainer from '../containers/SearchContainer.js';
-import handleVideoSearch from '../actions/search.js';
-import store from '../store/store.js';
+//import handleVideoSearch from '../actions/search.js';
+//import store from '../store/store.js';
 
 class App extends React.Component {
   // const App = () => {
@@ -20,7 +20,8 @@ class App extends React.Component {
 
   componentDidMount() {
     // this.getYouTubeVideos('react tutorials');
-    store.dispatch(handleVideoSearch('hiya'));
+    //store.dispatch(handleVideoSearch('test'));
+    this.props.handleSearchInputChange('test');
   }
 
   // handleVideoListEntryTitleClick(video) {
