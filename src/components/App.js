@@ -8,8 +8,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      videos: [],
-      currentVideo: null
+      // videos: [],
+      // currentVideo: null
     };
 
     this.getYouTubeVideos = this.getYouTubeVideos.bind(this);
@@ -49,10 +49,10 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer video={this.state.currentVideo}/>
+            <VideoPlayerContainer video={this.state.currentVideo}/>
           </div>
           <div className="col-md-5">
-            <VideoList
+            <VideoListContainer
               handleVideoListEntryTitleClick={this.handleVideoListEntryTitleClick.bind(this)}
               videos={this.state.videos}
             />
