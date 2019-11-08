@@ -18,4 +18,5 @@ ReactDOM.render(
     <AppContainer />
   </Provider>,
   document.getElementById('app')
+  // takes third argument to initialize, also affects dev tools
 );
