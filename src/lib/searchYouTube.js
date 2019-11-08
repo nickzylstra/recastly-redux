@@ -55,10 +55,10 @@ var searchYouTube = function searchYouTube({key, query, max}, callback) {
   // );
 
   const response = fetch(url).then(
-    (response) => { return response.json(); },
-    (error) => { console.log(error); }
+    (response) => { return response.json(); }
   ).then(
-    ({items}) => { callback(items); },
+    ({items}) => { callback(items); }
+  ).catch(
     (error) => { console.log(error); }
   );
 
