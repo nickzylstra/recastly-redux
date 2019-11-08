@@ -32,20 +32,35 @@ var searchYouTube = function searchYouTube({key, query, max}, callback) {
     url += '&' + propKey + '=' + propVal;
   });
 
-  const response = fetch(url);
+  // const response = fetch(url).then(
+  //   (response) => {
+  //     console.log(response);
+  //     console.log(response.json().then());
+  //     response.json().then(() => {
 
-  response.then(
-    (({items}) => {
-      if (callback) {
-        callback(items);
-      }
-    }),
-    (({responseJSON}) => {
-      responseJSON.error.errors.forEach((err) =>
-        console.error(err)
-      );
-    })
-  )
+  //     });
+  //     // debugger;
+  //     if (callback) {
+  //       const items = (response.json()).items;
+  //       callback(items);
+  //       console.log(response);
+  //     }
+  //   },
+  //   (response) => {
+  //     const responseJSON = (JSON.parse(response.json()));
+  //     responseJSON.error.errors.forEach((err) =>
+  //       console.error(err)
+  //     );
+  //   }
+  // );
+
+  const response = fetch(url).then(
+    (response) => { return response.json(); },
+    (error) => { console.log(error); }
+  ).then(
+    ({items}) => { callback(items); },
+    (error) => { console.log(error); }
+  );
 
   return response;
 };
